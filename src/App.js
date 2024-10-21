@@ -6,7 +6,7 @@ import SignIn from './sign-in/SignIn'
 function App() {
 
 
-  const userCookie = getCookie('yourCookieName');
+  const userCookie = getCookie('app-jwt');
 
   return (
     <div className="App">

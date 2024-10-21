@@ -77,7 +77,7 @@ export default function SignIn(props) {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+   
     const data = new FormData(event.currentTarget);
     console.log({
       email: data.get('email'),
@@ -86,13 +86,14 @@ export default function SignIn(props) {
     axios.post(`${process.env.REACT_APP_API_URL}login`,{
       username: data.get('email'),
       password: data.get('password')
-    }).then((token) => {
-
-
-      document.cookie = `app-jwt=${token.data.token}; path=/; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
-      console.log(token)
+    }).then((response) => {
+      if(!response.data.token) {
+        event.preventDefault();
+        alert('Erro:')
+      } else {
+        document.cookie = `app-jwt=${response.data.token}; path=/; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
+      }
     })
-
 
   };
 
