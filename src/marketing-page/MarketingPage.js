@@ -16,11 +16,11 @@ export default function MarketingPage(props) {
   return (
     <AppTheme {...props}>
       <CssBaseline enableColorScheme />
-      <AppAppBar />
-      <Hero />
+      {/* <AppAppBar /> */}
+      {/* <Hero /> */}
       <div>
-        <LogoCollection />
-        <Features />
+        {/* <LogoCollection /> */}
+        {/* <Features /> */}
         <Divider />
         <Testimonials />
         <Divider />

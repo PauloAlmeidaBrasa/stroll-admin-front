@@ -8,6 +8,12 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid2';
 import { useTheme } from '@mui/system';
+import axios from 'axios';
+
+console.log(process.env)
+const userTestimonialss = axios.get(`${process.env.REACT_APP_API_URL}questions/get`).then((response) => {
+  console.log(response)
+})
 
 const userTestimonials = [
   {
